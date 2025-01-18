@@ -1,0 +1,15 @@
+{
+  "name": "generator",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "fetch-iconsets": "rm -Rf icon-sets -y && mkdir -p icon-sets && curl https://codeload.github.com/iconify/icon-sets/tar.gz/master | tar -xz --directory icon-sets --strip=2 icon-sets-master/json",
+    "svg": "node generate-and-export-svg.js && vd-tool -c -in generated/svg -out ../iconify/resources/src/main/res/drawable"
+  },
+  "dependencies": {
+    "@iconify/tools": "^4.1.1"
+  },
+  "author": "",
+  "license": "ISC"
+}
